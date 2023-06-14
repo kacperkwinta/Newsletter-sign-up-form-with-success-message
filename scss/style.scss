@@ -1,0 +1,148 @@
+////////////////////////////////////////////////////////
+///                     MIXINS                       ///
+////////////////////////////////////////////////////////
+@mixin flexbox($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+////////////////////////////////////////////////////////
+///                  VARIABLES                       ///
+////////////////////////////////////////////////////////
+
+/// colors 
+$color-primary-1: hsl(4, 100%, 67%);
+$color-neutral-1: hsl(234, 29%, 20%);
+$color-neutral-2: hsl(235, 18%, 26%);
+$color-neutral-3: hsl(231, 7%, 60%);
+$color-neutral-4: hsl(0, 0%, 100%);
+
+// fonts
+$font-sans: 'Roboto', sans-serif;
+
+
+////////////////////////////////////////////////////////
+///                    GLOBAL                        ///
+////////////////////////////////////////////////////////
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $font-sans;
+    background-color: $color-neutral-2;
+
+    height: 100dvh;
+
+    @include flexbox(center, center);
+    flex-direction: column;
+    gap: 9.6rem;
+}
+
+////////////////////////////////////////////////////////
+///                NEWSLETTER BOX                    ///
+////////////////////////////////////////////////////////
+main {
+    background-color: $color-neutral-4;
+    color: $color-neutral-1;
+    padding: 2.4rem;
+    border-radius: 3rem;
+    max-width: 90rem;
+    box-shadow: $color-neutral-1 0px 25px 50px -12px;
+    @include flexbox(center, center)
+}
+
+.text-box {
+    padding: 3rem;
+}
+
+.text-box>*:not(:last-child) {
+    margin-top: 2.4rem;
+}
+
+.heading-1 {
+    color: $color-neutral-1;
+    font-size: 5.2rem;
+}
+
+.paragraph {
+    line-height: 1.5;
+    color: $color-neutral-2;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        @include flexbox(start, center);
+        gap: 1.2rem;
+        line-height: 2;
+    }
+}
+
+form {
+    margin-top: 2.4rem;
+}
+
+input {
+    margin-top: 0.6rem;
+    display: inline-block;
+    width: 100%;
+    padding: 1.6rem;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 0.8rem;
+
+    &::placeholder {
+        color: hsl(0, 0%, 65%);
+    }
+}
+
+.invalid {
+    border: 1px solid $color-primary-1;
+    background-color: lighten($color-primary-1, 30);
+    color: $color-primary-1;
+}
+
+
+label {
+    @include flexbox(space-between, center);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $color-neutral-1;
+}
+
+.error-message {
+    color: $color-primary-1;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    margin-top: 2.4rem;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    padding: 1.6rem;
+    font-weight: 700;
+    color: $color-neutral-4;
+    background-color: $color-neutral-1;
+    border: 1px solid transparent;
+    border-radius: 0.8rem;
+
+}
+
+// SPACING SYSTEM (px) 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+// FONT SIZE SYSTEM (px) 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
