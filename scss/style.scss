@@ -7,6 +7,18 @@
     align-items: $align;
 }
 
+// media queries
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==tablet {
+        @media only screen and (max-width: 56.25em) {
+            // below 900px
+            @content;
+        }
+    }
+}
+
+
 ////////////////////////////////////////////////////////
 ///                  VARIABLES                       ///
 ////////////////////////////////////////////////////////
@@ -21,6 +33,8 @@ $color-neutral-4: hsl(0, 0%, 100%);
 // fonts
 $font-sans: 'Roboto', sans-serif;
 
+// media queries
+$screen-m: 56.25em;
 
 ////////////////////////////////////////////////////////
 ///                    GLOBAL                        ///
@@ -35,6 +49,9 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
 
+    @include respond(tablet) {
+        font-size: 50%;
+    }
 }
 
 body {
@@ -59,8 +76,14 @@ main {
     border-radius: 3rem;
     max-width: 90rem;
     box-shadow: $color-neutral-1 0px 25px 50px -12px;
-    @include flexbox(center, center)
+    @include flexbox(center, center);
+
+    @include respond(tablet) {
+        flex-direction: column-reverse;
+    }
 }
+
+
 
 .text-box {
     padding: 3rem;
@@ -141,6 +164,18 @@ label {
     border: 1px solid transparent;
     border-radius: 0.8rem;
 
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.popup {
+    background-color: $color-neutral-4;
+    padding: 4.8rem;
+    border-radius: 3rem;
+    max-width: 50rem;
 }
 
 // SPACING SYSTEM (px) 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
