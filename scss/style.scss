@@ -130,6 +130,9 @@ input {
     }
 }
 
+///////////////////////
+/// ERROR STATE
+///////////////////////
 .invalid {
     border: 1px solid $color-primary-1;
     background-color: lighten($color-primary-1, 30);
@@ -144,6 +147,9 @@ label {
     color: $color-neutral-1;
 }
 
+///////////////////////
+/// ERROR STATE
+///////////////////////
 .error-message {
     color: $color-primary-1;
 }
@@ -163,6 +169,11 @@ label {
     background-color: $color-neutral-1;
     border: 1px solid transparent;
     border-radius: 0.8rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: darken($color-neutral-1 , 15);
+    }
 
 }
 
@@ -171,11 +182,28 @@ img {
     max-width: 100%;
 }
 
+////////////////////////////////////////////////////////
+///                       POPUP                      ///
+////////////////////////////////////////////////////////
 .popup {
     background-color: $color-neutral-4;
     padding: 4.8rem;
     border-radius: 3rem;
     max-width: 50rem;
+
+    img {
+        margin-bottom: 3.2rem;
+    }
+
+    h2 {
+        font-size: 5.2rem;
+        margin-bottom: 2.4rem;
+
+    }
+
+
+
+
 }
 
 // SPACING SYSTEM (px) 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
