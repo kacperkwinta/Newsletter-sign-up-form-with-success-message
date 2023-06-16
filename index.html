@@ -62,21 +62,25 @@
             Email address
             <span class="error-message hidden">Valid email required</span>
           </label>
-          <input class="" type="email" id="email" placeholder="email@company.com" required>
-          <button class="btn" type="submit">Subscribe to monthly newsletter</button>
+          <input class="input-email" type="email" id="email" placeholder="email@company.com" required>
+          <button class="btn btn--subscribe" type="submit">Subscribe to monthly newsletter</button>
         </form>
 
       </div>
 
-      <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      <picture>
+        <source media="(max-width: 56.25em)" srcset="assets/images/illustration-sign-up-mobile.svg">
+        <img src="assets/images/illustration-sign-up-desktop.svg" alt="">
+      </picture>
+
     </main>
 
-    <div class="popup">
+    <div class="popup hidden">
       <img src="assets/images/icon-success.svg" alt="">
       <h2 class="heading-2">Thanks for subscribing!</h2>
       <p>A confirmation email has been sent to ****************
         Please open it and click the button inside to confirm your subscription.</p>
-      <button class="btn">
+      <button class="btn btn--dismiss">
         Dismiss message
       </button>
     </div>
@@ -113,6 +117,8 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://github.com/kacperkwinta" target="_blank">Kacper Kwinta</a>.
     </div>
+
+    <script src="scripts/popup.js"></script>
   </body>
 
 </html>
